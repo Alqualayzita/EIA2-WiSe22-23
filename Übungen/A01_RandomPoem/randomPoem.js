@@ -25,4 +25,4 @@ var RandomPoem;
         return verse;
     }
 })(RandomPoem || (RandomPoem = {}));
-//# sourceMappingURL=randomPoem.js.map
+//# sourceMappingURL=RandomPoem.js.map
