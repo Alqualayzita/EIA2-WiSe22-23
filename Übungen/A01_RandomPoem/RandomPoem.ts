@@ -9,32 +9,32 @@ Quellen: -
 namespace RandomPoem 
 {
     /* 3 Arrays für Subjekte, Prädikate und Objekte*/
-    let subjekt: string[] = ["Harry", "Hermine", "Ron", "Hagrid", "Snape", "Dumbledore"];
-    let prädikat: string[] = ["braut", "liebt", "studiert", "hasst", "zaubert", "zerstört"];
-    let objekt: string[] = ["Zaubertränke", "den Grimm", "Lupin", "Hogwarts", "die Karte des Rumtreibers", "Dementoren"];
+    let subject: string[] = ["Harry", "Hermine", "Ron", "Hagrid", "Snape", "Dumbledore"];
+    let praedicat: string[] = ["braut", "liebt", "studiert", "hasst", "zaubert", "zerstört"];
+    let object: string[] = ["Zaubertränke", "den Grimm", "Lupin", "Hogwarts", "die Karte des Rumtreibers", "Dementoren"];
 
     /* For-Schleife, welche eine Variable (Subjekt) zählt und beim letzten Durchlauf 1 ist*/
-    for (let index: number = subjekt.length; index >= 1; index--) 
+    for (let index: number = subject.length; index >= 1; index--) 
     {
         //Ausgabe der zufälligen Sätze in der Konsole//
-        console.log(getVerse(subjekt, prädikat, objekt));
+        console.log(getVerse(subject, praedicat, object));
     }
 
     /* Funktion zur Erstellung der Sätze, Deklarierung als string*/
-    function getVerse (_subjekt: string[], _prädikat: string[], _objekt: string[] ): string 
+    function getVerse (_subject: string[], _praedicat: string[], _object: string[] ): string 
     {
         // Entstehung zufälliger Zahl und aufrunden//
-        let randomSubjekt: number = Math.floor(Math.random() * subjekt.length);
-        let randomPrädikat: number = Math.floor(Math.random() * prädikat.length);
-        let randomObjekt: number = Math.floor(Math.random() * objekt.length);
+        let randomSubject: number = Math.floor(Math.random() * subject.length);
+        let randomPraedicat: number = Math.floor(Math.random() * praedicat.length);
+        let randomObject: number = Math.floor(Math.random() * object.length);
 
         /*Aufbau Satz, entsprechendes Wort an der Stelle der zufälligen Nummer wird genommen*/
-        let  verse = _subjekt[randomSubjekt] + " " + _prädikat[randomPrädikat] + " " + _objekt[randomObjekt];
+        let  verse = _subject[randomSubject] + " " + _praedicat[randomPraedicat] + " " + _object[randomObject];
         
         /*Wort mit der entsprechenden zufälligen Nummer wird aus dem Array herausgeschnitten und zum Satz hinzugefügt*/
-        _subjekt.splice(randomSubjekt, 1);
-        _prädikat.splice(randomPrädikat, 1);
-        _objekt.splice(randomObjekt, 1);
+        _subject.splice(randomSubject, 1);
+        _praedicat.splice(randomPraedicat, 1);
+        _object.splice(randomObject, 1);
 
         return verse;
     }
