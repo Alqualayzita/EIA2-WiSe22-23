@@ -4,7 +4,7 @@ Aufgabe: A02 EventInspector
 Name: Alina Stumpf
 Matrikel: 271137
 Datum: 20.10.22
-Quellen: -
+Quellen: https://developer.mozilla.org/en-US/docs/Web/Events/Creating_and_triggering_events
 */
 var EventInspector;
 (function (EventInspector) {
