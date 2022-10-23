@@ -13,11 +13,20 @@ var EventInspector;
     /* Funktion handleLoad, welche den Button deklariert und alle EventListener hinzufügt */
     function handleLoad(_event) {
         let button = document.querySelector("#button");
+        let body = document.querySelector("body");
+        let div0 = document.querySelector("#div0");
+        let div1 = document.querySelector("#div1");
         document.addEventListener("mousemove", setInfoBox);
         document.addEventListener("click", logInfo);
         document.addEventListener("keyup", logInfo);
         button.addEventListener("click", logButton);
         document.addEventListener("CustomEvent", showButtonEvent);
+        body.addEventListener("click", logInfo);
+        body.addEventListener("keyup", logInfo);
+        div0.addEventListener("click", logInfo);
+        div0.addEventListener("keyup", logInfo);
+        div1.addEventListener("click", logInfo);
+        div1.addEventListener("keyup", logInfo);
     }
     /* Funktion setInfoBox, welche den Inhalt der Box an der Maus (Koordinaten und Target) erstellt */
     function setInfoBox(_event) {
