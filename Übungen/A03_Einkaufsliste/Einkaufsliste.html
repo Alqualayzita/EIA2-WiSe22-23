@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einkaufsliste</title>
+    <script src="https://kit.fontawesome.com/c96e399ea5.js" crossorigin="anonymous"></script>
+    <script src="Einkaufsliste.js"></script>
+    <link rel="stylesheet" href="Einkaufsliste.css">
+</head>
+
+<body>
+     <div class="container">
+         <header>
+             <h1>Einkaufsliste</h1>
+         </header>
+
+         <main>
+              <div>
+                  <form id="addItem">
+                     <input type="text" class=item id="name" placeholder="Name">
+                     <input type="number" class=item id="number" placeholder="Anzahl">
+                     <input type="date" class=item id="date" placeholder="Datum">
+                     <input type="text" class=item id="comment" placeholder="Kommentar">
+                     <input type="button" class=item id="add" value="Hinzufügen">
+                  </form>
+              </div>
+              <br>
+             <div id="itemDetails">
+                 <input type="checkbox" class="checkbox" id="check">
+                 <p id="itemName">Milch</p>
+                 <p id="itemAmount">1</p>
+                 <p id="itemComment">-</p>
+                 <p id="itemBuy">Ja</p>
+                 <p id="itemDate">27.10.22</p>
+                 <i class="fa-solid fa-pen" id="edit"></i>
+                 <i class="fa-solid fa-trash" id="delete"></i>
+             </div>
+             <div id="itemDetails">
+                 <input type="checkbox" class="checkbox" id="check">
+                 <p id="itemName">Äpfel</p>
+                 <p id="itemAmount">10</p>
+                 <p id="itemComment">Bio-Äpfel</p>
+                 <p id="itemBuy">Ja</p>
+                 <p id="itemDate">27.10.22</p>
+                 <i class="fa-solid fa-pen" id="edit"></i>
+                 <i class="fa-solid fa-trash" id="delete"></i>
+            </div>
+         </main>
+     </div>
+</body>
+</html>
