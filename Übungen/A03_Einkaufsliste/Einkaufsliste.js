@@ -11,9 +11,9 @@ var Einkaufsliste;
     window.addEventListener("load", handleList);
     function handleList() {
         let addButton = document.querySelector("#add");
-        let deleteButton = document.querySelector("#delete");
-        let checkButton = document.querySelector("#check");
-        let editButton = document.querySelector("#edit");
+        let deleteButton = document.querySelector(".delete");
+        let checkButton = document.querySelector(".check");
+        let editButton = document.querySelector(".edit");
         addButton.addEventListener("click", add);
         deleteButton.addEventListener("click", deleteItem);
         checkButton.addEventListener("click", check);

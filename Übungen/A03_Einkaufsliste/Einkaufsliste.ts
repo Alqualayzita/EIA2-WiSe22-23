@@ -13,9 +13,9 @@ namespace Einkaufsliste {
   
     function handleList(): void {
         let addButton: Element = document.querySelector("#add");
-        let deleteButton: Element = document.querySelector("#delete");
-        let checkButton: Element = document.querySelector("#check");
-        let editButton: Element=document.querySelector("#edit")
+        let deleteButton: Element = document.querySelector(".delete");
+        let checkButton: Element = document.querySelector(".check");
+        let editButton: Element=document.querySelector(".edit")
 
         addButton.addEventListener("click", add);
         deleteButton.addEventListener("click", deleteItem);
