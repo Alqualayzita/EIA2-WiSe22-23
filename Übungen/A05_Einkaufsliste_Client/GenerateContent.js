@@ -1,32 +1,32 @@
 "use strict";
-var A05_EinkaufslisteClient;
-(function (A05_EinkaufslisteClient) {
+var A05_Einkaufsliste_Client;
+(function (A05_Einkaufsliste_Client) {
     function generateContent(_shoppingList) {
         let listSpace = document.getElementById("list");
-        for (let i = 0; i < _shoppingList.Liste.length; i++) {
+        for (let i = 0; i < _shoppingList.List.length; i++) {
             let newProductDiv = document.createElement("div");
             newProductDiv.classList.add("item_box");
             newProductDiv.setAttribute("id", "item-" + i);
             listSpace.appendChild(newProductDiv);
             let newProductName = document.createElement("p");
             newProductName.classList.add("product");
-            newProductName.innerHTML = _shoppingList.Liste[i].product;
+            newProductName.innerHTML = _shoppingList.List[i].product;
             newProductDiv.appendChild(newProductName);
             let newPurchaseDate = document.createElement("p");
             newPurchaseDate.classList.add("date");
-            newPurchaseDate.innerHTML = _shoppingList.Liste[i].lastPurchase;
+            newPurchaseDate.innerHTML = _shoppingList.List[i].lastPurchase;
             newProductDiv.appendChild(newPurchaseDate);
             let newAmount = document.createElement("input");
             newAmount.setAttribute("type", "number");
             newAmount.setAttribute("min", "0");
             newAmount.setAttribute("id", "amountField_" + i);
             newAmount.classList.add("amount_item");
-            newAmount.value = _shoppingList.Liste[i].quantity;
+            newAmount.value = _shoppingList.List[i].quantity;
             newProductDiv.appendChild(newAmount);
             let newComment = document.createElement("textarea");
             newComment.classList.add("comment");
             newComment.setAttribute("id", "commentTextarea_" + i);
-            newComment.value = _shoppingList.Liste[i].comment;
+            newComment.value = _shoppingList.List[i].comment;
             newProductDiv.appendChild(newComment);
             let newStatusButton = document.createElement("i");
             newStatusButton.classList.add("fa-solid");
@@ -51,50 +51,50 @@ var A05_EinkaufslisteClient;
             newTrashButton.addEventListener("click", deleteItem);
         }
     }
-    A05_EinkaufslisteClient.generateContent = generateContent;
+    A05_Einkaufsliste_Client.generateContent = generateContent;
     function destroyContent(_shoppingList) {
-        for (let i = 0; i < _shoppingList.Liste.length; i++) {
+        for (let i = 0; i < _shoppingList.List.length; i++) {
             let currentItemDiv = document.getElementById("item-" + i);
             currentItemDiv.remove();
         }
     }
-    A05_EinkaufslisteClient.destroyContent = destroyContent;
+    A05_Einkaufsliste_Client.destroyContent = destroyContent;
     function deleteItem() {
         let activeID = parseInt(getButtonID());
-        destroyContent(A05_EinkaufslisteClient.globalShoppingList);
-        A05_EinkaufslisteClient.globalShoppingList.Liste.splice(activeID, 1);
-        generateContent(A05_EinkaufslisteClient.globalShoppingList);
-        A05_EinkaufslisteClient.updateJSON();
+        destroyContent(A05_Einkaufsliste_Client.globalShoppingList);
+        A05_Einkaufsliste_Client.globalShoppingList.List.splice(activeID, 1);
+        generateContent(A05_Einkaufsliste_Client.globalShoppingList);
+        A05_Einkaufsliste_Client.updateJSON();
     }
     function updateItem() {
         let newAmountString = document.getElementById("amountField_" + getButtonID()).value;
         let newCommentString = document.getElementById("commentTextarea_" + getButtonID()).value;
-        A05_EinkaufslisteClient.globalShoppingList.Liste[getButtonID()].quantity = parseInt(newAmountString);
-        A05_EinkaufslisteClient.globalShoppingList.Liste[getButtonID()].comment = newCommentString;
-        destroyContent(A05_EinkaufslisteClient.globalShoppingList);
-        generateContent(A05_EinkaufslisteClient.globalShoppingList);
-        A05_EinkaufslisteClient.updateJSON();
+        A05_Einkaufsliste_Client.globalShoppingList.List[getButtonID()].quantity = parseInt(newAmountString);
+        A05_Einkaufsliste_Client.globalShoppingList.List[getButtonID()].comment = newCommentString;
+        destroyContent(A05_Einkaufsliste_Client.globalShoppingList);
+        generateContent(A05_Einkaufsliste_Client.globalShoppingList);
+        A05_Einkaufsliste_Client.updateJSON();
     }
     function changeItemStatus() {
         let ActiveButton = document.getElementById("StatusButtonId_" + getButtonID());
         let ActiveID = parseInt(getButtonID());
-        if (A05_EinkaufslisteClient.globalShoppingList.Liste[ActiveID].inCart == false && A05_EinkaufslisteClient.globalShoppingList.Liste[ActiveID].bought == false) {
+        if (A05_Einkaufsliste_Client.globalShoppingList.List[ActiveID].inCart == false && A05_Einkaufsliste_Client.globalShoppingList.List[ActiveID].bought == false) {
             ActiveButton.classList.add("fa-cart-shopping");
             ActiveButton.classList.remove("fa-circle");
-            A05_EinkaufslisteClient.globalShoppingList.Liste[ActiveID].inCart = true;
+            A05_Einkaufsliste_Client.globalShoppingList.List[ActiveID].inCart = true;
         }
-        else if (A05_EinkaufslisteClient.globalShoppingList.Liste[ActiveID].inCart == true && A05_EinkaufslisteClient.globalShoppingList.Liste[ActiveID].bought == false) {
+        else if (A05_Einkaufsliste_Client.globalShoppingList.List[ActiveID].inCart == true && A05_Einkaufsliste_Client.globalShoppingList.List[ActiveID].bought == false) {
             ActiveButton.classList.add("fa-check");
             ActiveButton.classList.remove("fa-cart-shopping");
-            A05_EinkaufslisteClient.globalShoppingList.Liste[ActiveID].bought = true;
+            A05_Einkaufsliste_Client.globalShoppingList.List[ActiveID].bought = true;
         }
         else {
             ActiveButton.classList.add("fa-circle");
             ActiveButton.classList.remove("fa-check");
-            A05_EinkaufslisteClient.globalShoppingList.Liste[ActiveID].inCart = false;
-            A05_EinkaufslisteClient.globalShoppingList.Liste[ActiveID].bought = false;
+            A05_Einkaufsliste_Client.globalShoppingList.List[ActiveID].inCart = false;
+            A05_Einkaufsliste_Client.globalShoppingList.List[ActiveID].bought = false;
         }
-        A05_EinkaufslisteClient.updateJSON();
+        A05_Einkaufsliste_Client.updateJSON();
     }
     function getButtonID() {
         let activeItem = document.querySelector(".button:hover").getAttribute("id");
@@ -102,5 +102,5 @@ var A05_EinkaufslisteClient;
         let activeID = activeItemIDString[1];
         return activeID;
     }
-})(A05_EinkaufslisteClient || (A05_EinkaufslisteClient = {}));
+})(A05_Einkaufsliste_Client || (A05_Einkaufsliste_Client = {}));
 //# sourceMappingURL=GenerateContent.js.map

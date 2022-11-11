@@ -2,13 +2,13 @@
 Aufgabe: A05 Einkaufsliste Client
 Name: Alina Stumpf
 Matrikel: 271137
-Datum: 10.11.2022
+Datum: 11.11.2022
 Quellen: 
 */
 
-namespace A05_EinkaufslisteClient
+namespace A05_Einkaufsliste_Client
 {
-    export let dataJSON: string = "https://alqualayzita.github.io/EIA2_WiSe22-23/Übungen/A05_Einkaufsliste_Client/data.json";
+    export let dataJSON: string = "https://alqualayzita.github.io/EIA2-WiSe22-23/%C3%9Cbungen/A05_Einkaufsliste_Client/Data.json";
     export let globalShoppingList: ShoppingList;
     let newItemPanel: HTMLElement = document.getElementById("Input");
     window.addEventListener("load", handleLoad);
@@ -22,7 +22,7 @@ namespace A05_EinkaufslisteClient
     async function handleLoad(): Promise<void>
     {
         document.getElementById("addnewItem").addEventListener("click", showNewItemArea);
-        document.getElementById("newitembutton").addEventListener("click", addNewItem); 
+        document.getElementById("newitemButton").addEventListener("click", addNewItem); 
         await importJSON(dataJSON);
         generateContent(globalShoppingList); 
     }
@@ -32,21 +32,21 @@ namespace A05_EinkaufslisteClient
             console.log(sendJSONString);
             let query: URLSearchParams = new URLSearchParams(<any>sendJSONString);
             await fetch("ShoppingApp.html?" + query.toString());
-            alert("JSON Datei wurde geupdated!");    
+            alert("Update JSON");    
     }
-
     function showNewItemArea(): void 
     {        
         newItemPanel.setAttribute("style", "display:inline-block;");
     }
     function addNewItem(): void
     {
+        
         let newFormInput: HTMLElement = document.getElementById("InputForm");
         let newInputData = new FormData(newFormInput);
         console.log(newInputData.get("product"));
         console.log(newInputData.get("quantity"));
         console.log(newInputData.get("comment"));
-        if(newInputData.get("product") == "" || newInputData.get("quantity") < 1)
+        if( newInputData.get("product") == "" || newInputData.get("quantity") < 1 )
         {
             return;
         }
@@ -63,7 +63,8 @@ namespace A05_EinkaufslisteClient
             bought: false,
             lastPurchase: correctDate
         };
-        globalShoppingList.Liste.push(newItem);
+        globalShoppingList.List.push(newItem);
+        updateJSON();
         generateContent(globalShoppingList);
         newItemPanel.setAttribute("style", "display:none;");
     }

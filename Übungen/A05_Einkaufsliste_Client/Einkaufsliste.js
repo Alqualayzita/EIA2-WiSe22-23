@@ -3,34 +3,34 @@
 Aufgabe: A05 Einkaufsliste Client
 Name: Alina Stumpf
 Matrikel: 271137
-Datum: 10.11.2022
+Datum: 11.11.2022
 Quellen:
 */
-var A05_EinkaufslisteClient;
-(function (A05_EinkaufslisteClient) {
-    A05_EinkaufslisteClient.dataJSON = "https://alqualayzita.github.io/EIA2_WiSe22-23/Übungen/A05_Einkaufsliste_Client/data.json";
+var A05_Einkaufsliste_Client;
+(function (A05_Einkaufsliste_Client) {
+    A05_Einkaufsliste_Client.dataJSON = "https://alqualayzita.github.io/EIA2-WiSe22-23/%C3%9Cbungen/A05_Einkaufsliste_Client/Data.json";
     let newItemPanel = document.getElementById("Input");
     window.addEventListener("load", handleLoad);
     async function importJSON(_url) {
         let response = await fetch(_url);
         console.log("Response", response);
-        A05_EinkaufslisteClient.globalShoppingList = await response.json();
-        console.log(A05_EinkaufslisteClient.globalShoppingList);
+        A05_Einkaufsliste_Client.globalShoppingList = await response.json();
+        console.log(A05_Einkaufsliste_Client.globalShoppingList);
     }
     async function handleLoad() {
         document.getElementById("addnewItem").addEventListener("click", showNewItemArea);
-        document.getElementById("newitembutton").addEventListener("click", addNewItem);
-        await importJSON(A05_EinkaufslisteClient.dataJSON);
-        A05_EinkaufslisteClient.generateContent(A05_EinkaufslisteClient.globalShoppingList);
+        document.getElementById("newitemButton").addEventListener("click", addNewItem);
+        await importJSON(A05_Einkaufsliste_Client.dataJSON);
+        A05_Einkaufsliste_Client.generateContent(A05_Einkaufsliste_Client.globalShoppingList);
     }
     async function updateJSON() {
-        let sendJSONString = JSON.stringify(A05_EinkaufslisteClient.globalShoppingList);
+        let sendJSONString = JSON.stringify(A05_Einkaufsliste_Client.globalShoppingList);
         console.log(sendJSONString);
         let query = new URLSearchParams(sendJSONString);
         await fetch("ShoppingApp.html?" + query.toString());
-        alert("JSON Datei wurde geupdated!");
+        alert("Update JSON");
     }
-    A05_EinkaufslisteClient.updateJSON = updateJSON;
+    A05_Einkaufsliste_Client.updateJSON = updateJSON;
     function showNewItemArea() {
         newItemPanel.setAttribute("style", "display:inline-block;");
     }
@@ -43,7 +43,7 @@ var A05_EinkaufslisteClient;
         if (newInputData.get("product") == "" || newInputData.get("quantity") < 1) {
             return;
         }
-        A05_EinkaufslisteClient.destroyContent(A05_EinkaufslisteClient.globalShoppingList);
+        A05_Einkaufsliste_Client.destroyContent(A05_Einkaufsliste_Client.globalShoppingList);
         let currentDate = new Date();
         let wrongMonth = parseInt(currentDate.getMonth());
         let correctDate = currentDate.getDate() + "." + (wrongMonth + 1) + "." + currentDate.getFullYear();
@@ -55,9 +55,10 @@ var A05_EinkaufslisteClient;
             bought: false,
             lastPurchase: correctDate
         };
-        A05_EinkaufslisteClient.globalShoppingList.Liste.push(newItem);
-        A05_EinkaufslisteClient.generateContent(A05_EinkaufslisteClient.globalShoppingList);
+        A05_Einkaufsliste_Client.globalShoppingList.List.push(newItem);
+        updateJSON();
+        A05_Einkaufsliste_Client.generateContent(A05_Einkaufsliste_Client.globalShoppingList);
         newItemPanel.setAttribute("style", "display:none;");
     }
-})(A05_EinkaufslisteClient || (A05_EinkaufslisteClient = {}));
+})(A05_Einkaufsliste_Client || (A05_Einkaufsliste_Client = {}));
 //# sourceMappingURL=Einkaufsliste.js.map

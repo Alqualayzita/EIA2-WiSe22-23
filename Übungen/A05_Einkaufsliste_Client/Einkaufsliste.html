@@ -6,36 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Einkaufsliste.css">
     <script src="Einkaufsliste.js" defer> </script>
-    <script src="Data.js" defer> </script>
     <script src="GenerateContent.js" defer> </script>
     <script src="https://kit.fontawesome.com/4287d81834.js" crossorigin="anonymous"></script>
     <title>Einkaufsliste</title>
 </head>
 
-<body> 
+<body>
     <main>
-        <div class="container">
-             <h1>Einkaufsliste</h1>
+          <div class="container">
+              <h1>Einkaufsliste</h1>
 
-        <div>
-             <button class = "openAdd" id="addnewItem"> + </button>
-             <p class = "openAdd">Eintrag hinzufügen</p>
+          <div>
+                 <button class = "openAdd" id="addnewItem"> + </button>
+                 <p class = "openAdd">Eintrag hinzufügen</p>
 
-             <div id="Input">
-                 <form id="InputForm">
+          <div id="Input">
+                <form id="InputForm">
                      <input class="name_item" name ="product" placeholder="Name">
                      <input type="number" class="amount_item" name="quantity" min="0">
                      <textarea class="comment" name="comment" placeholder="Kommentar"></textarea>
-                 </form>
-                 <button id ="newitemButton" type="button">Hinzufügen</button>
-             </div>
-         </div>
- 
-         <div id="list">
-         </div>
+                </form>
+                <button id ="newitemButton" type="button">Hinzufügen</button>
+          </div>
 
-         </div>    
-    </main>
+          <div id="list">
+          </div>
+    </main>   
 </body>
 
 </html>
