@@ -1,5 +1,6 @@
 "use strict";
-/* export let shoppingList: ShoppingList =
+/*
+export let shoppingList: ShoppingList =
 {
     Liste:
     [
