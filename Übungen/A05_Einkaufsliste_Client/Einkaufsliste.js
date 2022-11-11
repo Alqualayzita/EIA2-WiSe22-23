@@ -4,7 +4,7 @@ Aufgabe: A05 Einkaufsliste Client
 Name: Alina Stumpf
 Matrikel: 271137
 Datum: 11.11.2022
-Quellen:
+Quellen: -
 */
 var A05_Einkaufsliste_Client;
 (function (A05_Einkaufsliste_Client) {

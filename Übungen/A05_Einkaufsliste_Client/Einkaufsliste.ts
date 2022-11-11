@@ -3,7 +3,7 @@ Aufgabe: A05 Einkaufsliste Client
 Name: Alina Stumpf
 Matrikel: 271137
 Datum: 11.11.2022
-Quellen: 
+Quellen: -
 */
 
 namespace A05_Einkaufsliste_Client
