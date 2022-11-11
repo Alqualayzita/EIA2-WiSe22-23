@@ -8,7 +8,7 @@ Quellen:
 */
 var A06_EinkaufslisteDatenstruktur;
 (function (A06_EinkaufslisteDatenstruktur) {
-    A06_EinkaufslisteDatenstruktur.dataJSON = "https://alqualayzita.github.io/EIA2_WiSe22-23/Übungen/A05_Einkaufsliste_Client/data.json";
+    A06_EinkaufslisteDatenstruktur.dataJSON = "https://alqualayzita.github.io/EIA2-WiSe22-23/Übungen/A05_Einkaufsliste_Client/data.json";
     let newItemPanel = document.getElementById("Input");
     window.addEventListener("load", handleLoad);
     async function importJSON(_url) {
