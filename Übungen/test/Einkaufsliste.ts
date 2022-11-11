@@ -9,7 +9,7 @@ Quellen:
 namespace A06_EinkaufslisteDatenstruktur
 {
     
-    export let dataJSON: string = "https://alqualayzita.github.io/EIA2_WiSe22-23/Übungen/test/Data.json";
+    export let dataJSON: string = "https://alqualayzita.github.io/EIA2-WiSe22-23/Übungen/test/Data.json";
     export let globalShoppingList: ShoppingList;
     let newItemPanel: HTMLElement = document.getElementById("Input");
     window.addEventListener("load", handleLoad);
