@@ -8,7 +8,7 @@ Quellen:
 */
 var A05_Einkaufsliste_Client;
 (function (A05_Einkaufsliste_Client) {
-    A05_Einkaufsliste_Client.dataJSON = "https://alqualayzita.github.io/EIA2-WiSe22-23/%C3%9Cbungen/A05_Einkaufsliste_Client/Data.json";
+    A05_Einkaufsliste_Client.dataJSON = "https://alqualayzita.github.io/EIA2-WiSe22-23/%C3%9Cbungen/A05_Einkaufsliste_Client/data.json";
     let newItemPanel = document.getElementById("Input");
     window.addEventListener("load", handleLoad);
     async function importJSON(_url) {

@@ -8,7 +8,7 @@ Quellen:
 
 namespace A05_Einkaufsliste_Client
 {
-    export let dataJSON: string = "https://alqualayzita.github.io/EIA2-WiSe22-23/%C3%9Cbungen/A05_Einkaufsliste_Client/Data.json";
+    export let dataJSON: string = "https://alqualayzita.github.io/EIA2-WiSe22-23/%C3%9Cbungen/A05_Einkaufsliste_Client/data.json";
     export let globalShoppingList: ShoppingList;
     let newItemPanel: HTMLElement = document.getElementById("Input");
     window.addEventListener("load", handleLoad);
