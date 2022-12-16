@@ -1,4 +1,11 @@
 "use strict";
+/*
+Aufgabe: A09.2 VogelhausClasses
+Name: Alina Stumpf
+Matrikel: 271137
+Datum: 15.12.2022
+Quellen: -
+*/
 var L09_2_VogelhausClasses;
 (function (L09_2_VogelhausClasses) {
     window.addEventListener("load", handleLoad);

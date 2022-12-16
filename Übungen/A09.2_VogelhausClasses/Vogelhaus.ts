@@ -1,3 +1,12 @@
+/*
+Aufgabe: A09.2 VogelhausClasses
+Name: Alina Stumpf
+Matrikel: 271137
+Datum: 15.12.2022
+Quellen: -
+*/
+
+
 namespace L09_2_VogelhausClasses {
 
     window.addEventListener("load", handleLoad);
